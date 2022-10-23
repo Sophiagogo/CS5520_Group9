@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -67,4 +68,20 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-}
+
+    public void nameTextPressed(View view) {
+        EditText nameView = findViewById(R.id.register_name);
+        nameView.getText().clear();
+    }
+
+    public void usernameTextPressed(View view) {
+        EditText nameView = findViewById(R.id.register_username);
+        nameView.getText().clear();
+    }
+
+    public void passwordTextPressed(View view) {
+        EditText nameView = findViewById(R.id.register_password);
+        nameView.getText().clear();
+    }
+
+    }
