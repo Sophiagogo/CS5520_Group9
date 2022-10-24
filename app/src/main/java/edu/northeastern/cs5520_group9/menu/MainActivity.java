@@ -10,7 +10,7 @@ import edu.northeastern.cs5520_group9.R;
 import edu.northeastern.cs5520_group9.firebase.FirebaseDBActivity;
 import edu.northeastern.cs5520_group9.groupProject.GroupProjectActivity;
 import edu.northeastern.cs5520_group9.team.TeamNameActivity;
-import edu.northeastern.cs5520_group9.webService.WebServiceActivity;
+import edu.northeastern.cs5520_group9.webService.SearchActivity;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openWebServiceActivity() {
-        Intent intent = new Intent(this, WebServiceActivity.class);
+        Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
 

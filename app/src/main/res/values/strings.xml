@@ -4,6 +4,9 @@
     <string name="web_service">Web Service</string>
     <string name="firebase_database">Firebase Database</string>
     <string name="group_project">Group Project</string>
-    <string name="team">Team Name: XXXXXXX \nTeam members:\nShoujuan Fan\n
+    <string name="team">Team Name: Group 9 \nTeam members:\nShoujuan Fan\n
         Cai Zhang\nLiyang Pang\nBaoyan Li\nYaozheng Wang</string>
+    <string name="search_cat_images">Search cat images</string>
+    <string name="search">Search</string>
+    <string name="cat_images">Cat Images</string>
 </resources>

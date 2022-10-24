@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="edu.northeastern.cs5520_group9" >
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />                     <!-- Permission for internet -->
 
     <application
         android:allowBackup="true"
@@ -16,12 +16,6 @@
         android:theme="@style/Theme.CS5520_Group9"
         tools:targetApi="31" >
         <activity
-            android:name=".webService.UserProfile"
-            android:exported="false" />
-        <activity
-            android:name=".webService.RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name=".menu.MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -33,7 +27,8 @@
         <activity android:name=".team.TeamNameActivity" />
         <activity android:name=".firebase.FirebaseDBActivity" />
         <activity android:name=".groupProject.GroupProjectActivity" />
-        <activity android:name=".webService.WebServiceActivity" />
+        <activity android:name=".webService.SearchActivity" />
+        <activity android:name=".webService.getImageActivity" />
     </application>
 
 </manifest>
