@@ -3,20 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/drawable/access_point_network_off.xml" value="0.1185" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/drawable/image_border.xml" value="0.1185" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/drawable/no_image.xml" value="0.1" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_firebase_database.xml" value="0.23072916666666668" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_get_image.xml" value="0.1703125" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_group_project.xml" value="0.23177083333333334" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_login_new.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_register.xml" value="0.20625" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_search.xml" value="0.228125" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_search2.xml" value="0.8483263598326359" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_team_name.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_user_profile.xml" value="0.20625" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_web_service.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/activity_firebase_database.xml" value="0.1828125" />
+        <entry key="app/src/main/res/layout/activity_get_image.xml" value="0.19293478260869565" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_send_sticker.xml" value="0.1828125" />
+        <entry key="app/src/main/res/layout/activity_team_name.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/activity_web_service.xml" value="0.17481884057971014" />
       </map>
     </option>
   </component>

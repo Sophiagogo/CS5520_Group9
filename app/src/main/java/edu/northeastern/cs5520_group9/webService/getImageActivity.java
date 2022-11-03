@@ -18,7 +18,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-
 import edu.northeastern.cs5520_group9.R;
 import retrofit2.Call;
 import retrofit2.Callback;
