@@ -13,4 +13,7 @@
     <string name="firebase_username">Enter Your Username To Register</string>
     <string name="sendSticker_send">SEND</string>
     <string name="sendSticker_Check">Check History</string>
+    <string name="stickers_string">Stickers</string>
+    <string name="from_user_string">From User</string>
+    <string name="send_time_string">Send Time</string>
 </resources>
