@@ -36,38 +36,38 @@ public class FCMActivity extends FirebaseMessagingService {
     @SuppressLint("HardwareIds")
     public void onCreate() {
         super.onCreate();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child("users").child(userId).get().addOnCompleteListener(task -> {
-            if (!task.isSuccessful()) {
-                Log.e("firebase", "Error getting data", task.getException());
-            } else {
-                HashMap tempMap = (HashMap) task.getResult().getValue();
-                if (tempMap == null) {
-                    Log.e("firebase", "Empty data");
-                    return;
-                }
-                userName = Objects.requireNonNull(tempMap.get("username")).toString();
-            }
-        });
-        userId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
-        stickers.put(1, R.drawable.apple);
-        stickers.put(2, R.drawable.banana);
-        stickers.put(3, R.drawable.bean_stew);
-        stickers.put(4, R.drawable.noodles);
-        stickers.put(5, R.drawable.sandwich);
-        stickers.put(6, R.drawable.sushi_roll);
+//        databaseReference = FirebaseDatabase.getInstance().getReference();
+//        databaseReference.child("users").child(userId).get().addOnCompleteListener(task -> {
+//            if (!task.isSuccessful()) {
+//                Log.e("firebase", "Error getting data", task.getException());
+//            } else {
+//                HashMap tempMap = (HashMap) task.getResult().getValue();
+//                if (tempMap == null) {
+//                    Log.e("firebase", "Empty data");
+//                    return;
+//                }
+//                userName = Objects.requireNonNull(tempMap.get("username")).toString();
+//            }
+//        });
+//        userId = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+//        stickers.put(1, R.drawable.apple);
+//        stickers.put(2, R.drawable.banana);
+//        stickers.put(3, R.drawable.bean_stew);
+//        stickers.put(4, R.drawable.noodles);
+//        stickers.put(5, R.drawable.sandwich);
+//        stickers.put(6, R.drawable.sushi_roll);
     }
 
     @Override
     public void onNewToken(@NonNull String token) {
-        super.onNewToken(token);
-        Log.i(TAG, "onTokenRefresh completed with token: " + token);
-
-        // new token
-        @SuppressLint("HardwareIds")
-        User user = new User(this.userName, Settings.Secure.getString(
-                getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID), token);
-        databaseReference.child("users").child(user.getDeviceId()).setValue(user);
+//        super.onNewToken(token);
+//        Log.i(TAG, "onTokenRefresh completed with token: " + token);
+//
+//        // new token
+//        @SuppressLint("HardwareIds")
+//        User user = new User(this.userName, Settings.Secure.getString(
+//                getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID), token);
+//        databaseReference.child("users").child(user.getDeviceId()).setValue(user);
     }
 
     @Override
