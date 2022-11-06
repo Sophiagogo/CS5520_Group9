@@ -5,6 +5,12 @@ public class User {
     private String deviceId;
     private String token;
 
+    public User(String username, String deviceId, String token) {
+        this.username = username;
+        this.deviceId = deviceId;
+        this.token = token;
+    }
+
     public String getUsername() {
         return username;
     }

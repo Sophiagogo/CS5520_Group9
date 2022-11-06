@@ -65,9 +65,9 @@ public class FCMActivity extends FirebaseMessagingService {
 
         // new token
         @SuppressLint("HardwareIds")
-        UserInfo user = new UserInfo(this.userName, Settings.Secure.getString(
+        User user = new User(this.userName, Settings.Secure.getString(
                 getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID), token);
-        databaseReference.child("users").child(user.deviceID).setValue(user);
+        databaseReference.child("users").child(user.getDeviceId()).setValue(user);
     }
 
     @Override
