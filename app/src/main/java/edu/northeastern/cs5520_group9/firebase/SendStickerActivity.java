@@ -7,24 +7,21 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -44,6 +41,7 @@ public class SendStickerActivity extends AppCompatActivity {
     private Integer selectedImageId;
     private Spinner usernameSelector;
     private String myUsername;
+    private long lastVisitedEpochSecond;
     private Map<String, Map<String, String>> usersMap = new HashMap<>();
     private List<ImageView> imageViews = new ArrayList<>();
     private DatabaseReference db;
@@ -52,9 +50,6 @@ public class SendStickerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_sticker);
-
-        // load current logged in username from global data store
-        myUsername = getSharedPreferences("login", MODE_PRIVATE).getString("username", "unknownUser");
 
         // images
         imageViews.add(findViewById(R.id.image1));
@@ -70,41 +65,33 @@ public class SendStickerActivity extends AppCompatActivity {
         });
 
         // attach a listener to monitor a new sticker creation
-        ChildEventListener stickerEventListener = new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d("SendStickerActivity", "onChildAdded:" + dataSnapshot.getKey());
-                Sticker sticker = dataSnapshot.getValue(Sticker.class);
-                System.out.println("A new sticker has just been added: " + sticker);
-                if (sticker.getToUser().equals(myUsername)) {
-                    sendNotification(sticker);
-                }
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // no op
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                // no op
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // no op
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                // no op
-            }
-
-        };
         DatabaseReference stickersRef = FirebaseDatabase.getInstance().getReference("stickers");
-        // make sure only listens to sticker created after app started, instead of listening for previously created stickers
-        stickersRef.orderByChild("sendTimeEpochSecond").startAt(Instant.now().getEpochSecond()).addChildEventListener(stickerEventListener);
+        stickersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // load current logged in username from global data store
+                myUsername = getSharedPreferences("login", MODE_PRIVATE).getString("username", "unknownUser");
+                lastVisitedEpochSecond = getSharedPreferences("login", MODE_PRIVATE).getLong("lastVisitedEpochSecond", Instant.now().getEpochSecond());
+
+                for (DataSnapshot stickerSnapshot: dataSnapshot.getChildren()) {
+                    Sticker sticker = stickerSnapshot.getValue(Sticker.class);
+                    if (sticker.getToUser().equals(myUsername) && sticker.getSendTimeEpochSecond() > lastVisitedEpochSecond) {
+                        System.out.println("A sticker had been sent to current user: " + sticker);
+                        sendNotification(sticker);
+                    }
+                }
+
+                // update last visited time for the user, so the user only receives sticker that is sent beyond this time
+                Instant now = Instant.now();
+                getSharedPreferences("login", MODE_PRIVATE).edit().putLong("lastVisitedEpochSecond", now.getEpochSecond()).apply();
+                db.child("users").child(myUsername).setValue(new User(myUsername, now.getEpochSecond()));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // no-op
+            }
+        });
     }
 
     public void sendSticker(View view) {
@@ -155,7 +142,7 @@ public class SendStickerActivity extends AppCompatActivity {
         // Create the notification builder
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_group)
-                .setContentTitle("You have a new sticker!")
+                .setContentTitle("You have a new sticker from " + sticker.getFromUser() + "!")
                 .setContentText("imageId=" + sticker.getImageId())
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .addAction(R.mipmap.ic_launcher_group, "Snooze", pendingIntent);

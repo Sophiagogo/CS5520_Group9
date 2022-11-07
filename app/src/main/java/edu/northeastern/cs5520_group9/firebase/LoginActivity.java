@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.Instant;
+import java.util.Map;
+
 import edu.northeastern.cs5520_group9.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,11 +30,25 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         String username = ((EditText) findViewById(R.id.username)).getText().toString();
-        User user = new User(username);
-        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-        db.child("users").child(username).setValue(user);
-        globalLoginData.edit().putString("username", username).apply();
-        Intent intent = new Intent(this, SendStickerActivity.class);
-        startActivity(intent);
+
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference("users");
+        db.child(username).get().addOnCompleteListener((t) -> {
+            Map<String, Object> userMap = (Map<String, Object>) t.getResult().getValue();
+            User user;
+            if (userMap == null) {
+                // register new user
+                user = new User(username, Instant.now().getEpochSecond());
+            } else {
+                // login existing user
+                user = new User(username, (long) userMap.get("lastVisitedEpochSecond"));
+            }
+            db.child(username).setValue(user);
+            globalLoginData.edit().putString("username", user.getUsername()).putLong("lastVisitedEpochSecond", user.getLastVisitedEpochSecond()).apply();
+
+            Intent intent = new Intent(this, SendStickerActivity.class);
+            startActivity(intent);
+        });
+
+
     }
 }
