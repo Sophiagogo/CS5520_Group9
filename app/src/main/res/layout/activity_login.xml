@@ -4,17 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".firebase.FirebaseDBActivity">
+    tools:context=".firebase.LoginActivity">
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="305dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="87dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 
     <Button
-        android:id="@+id/firebase_register"
+        android:id="@+id/login"
         android:layout_width="148dp"
         android:layout_height="65dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="136dp"
         android:layout_marginBottom="100dp"
-        android:text="@string/firebase_register"
+        android:text="@string/login"
+        android:onClick="login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,19 +39,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.548" />
 
-    <EditText
-        android:id="@+id/firebase_username"
-        android:layout_width="305dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="146dp"
-        android:layout_marginEnd="87dp"
-        android:ems="10"
-        android:hint="@string/firebase_username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/firebase_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

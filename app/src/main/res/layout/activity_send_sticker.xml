@@ -8,18 +8,29 @@
     tools:context=".firebase.SendStickerActivity">
 
     <TextView
-        android:id="@+id/recipientUsername"
+        android:id="@+id/recipientLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="256dp"
-        android:text="Recipient username"
+        android:text="Send to:"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.021" />
+
+    <Spinner
+        android:id="@+id/usernameList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
 
     <ImageView
         android:id="@+id/image1"
@@ -58,6 +69,7 @@
         android:layout_marginEnd="255dp"
         android:layout_marginBottom="260dp"
         android:text="@string/sendSticker_send"
+        android:onClick="sendSticker"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +84,7 @@
         android:layout_marginEnd="47dp"
         android:layout_marginBottom="259dp"
         android:text="@string/sendSticker_Check"
+        android:onClick="showHistory"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/SendSticker_send"

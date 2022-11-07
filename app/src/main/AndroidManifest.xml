@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".team.TeamNameActivity" />
-        <activity android:name=".firebase.FirebaseDBActivity" />
+        <activity android:name=".firebase.LoginActivity" />
         <activity android:name=".groupProject.GroupProjectActivity" />
         <activity android:name=".webService.SearchActivity" />
         <activity android:name=".webService.getImageActivity" />

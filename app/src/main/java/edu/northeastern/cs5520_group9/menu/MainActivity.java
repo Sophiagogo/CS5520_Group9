@@ -7,7 +7,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import edu.northeastern.cs5520_group9.R;
-import edu.northeastern.cs5520_group9.firebase.FirebaseDBActivity;
+import edu.northeastern.cs5520_group9.firebase.LoginActivity;
 import edu.northeastern.cs5520_group9.groupProject.GroupProjectActivity;
 import edu.northeastern.cs5520_group9.team.TeamNameActivity;
 import edu.northeastern.cs5520_group9.webService.SearchActivity;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openFirebaseDBActivity() {
-        Intent intent = new Intent(this, FirebaseDBActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

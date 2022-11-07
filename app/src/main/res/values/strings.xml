@@ -9,8 +9,8 @@
     <string name="search_cat_images">Search cat images</string>
     <string name="search">Search</string>
     <string name="cat_images">Cat Images</string>
-    <string name="firebase_register">Register</string>
-    <string name="firebase_username">Enter Your Username To Register</string>
+    <string name="login">Login</string>
+    <string name="username">Enter your username To login</string>
     <string name="sendSticker_send">SEND</string>
     <string name="sendSticker_Check">Check History</string>
     <string name="stickers_string">Stickers</string>
