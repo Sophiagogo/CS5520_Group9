@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.Date;
+
 import edu.northeastern.cs5520_group9.R;
 
 /**
@@ -28,12 +30,12 @@ public class StickerViewHolderRecyclerView extends RecyclerView.ViewHolder {
 
 
     public void bindThisData(Sticker sticker) {
-        int imageResource = getImageResourceById(sticker.getId());
+        int imageResource = getImageResourceById(sticker.getImageId());
         if (imageResource != -1) {
             receivedView.setImageResource(imageResource);
         }
         fromUser.setText(sticker.getFromUser());
-        sendTime.setText(sticker.getSendTime());
+        sendTime.setText(new Date(sticker.getSendTimeEpochSecond()).toString());
     }
 
     // to get sticker by id

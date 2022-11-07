@@ -19,7 +19,7 @@ import edu.northeastern.cs5520_group9.R;
 
 public class HistoryActivity extends AppCompatActivity {
     private List<Sticker> stickers;
-    private String userName;
+    private String username;
     private DatabaseReference databaseReference;
 
     @Override
@@ -27,7 +27,7 @@ public class HistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
         // Set the userName, databaseReference and stickers
-        userName = getIntent().getExtras().getString("user_name");
+        username = getSharedPreferences("login", MODE_PRIVATE).getString("username", "unknownUser");
         databaseReference = FirebaseDatabase.getInstance().getReference();
         stickers = new ArrayList<>();
         // Query from database and update history
@@ -50,14 +50,14 @@ public class HistoryActivity extends AppCompatActivity {
     private void queryFromDatabase() {
         stickers = new ArrayList<>();
         databaseReference.child("stickers").get().addOnCompleteListener((t) -> {
-            HashMap<String, HashMap<String, String>> tempMap = (HashMap) t.getResult().getValue();
+            HashMap<String, HashMap<String, Object>> tempMap = (HashMap) t.getResult().getValue();
             if (tempMap == null) return;
             for (String Key : tempMap.keySet()) {
-                String fromUser = Objects.requireNonNull(tempMap.get(Key)).get("fromUser");
+                String fromUser = (String) Objects.requireNonNull(tempMap.get(Key)).get("fromUser");
                 String id = String.valueOf(Objects.requireNonNull(tempMap.get(Key)).get("id"));
-                String sendTime = Objects.requireNonNull(tempMap.get(Key)).get("sendTime");
-                String toUser = Objects.requireNonNull(tempMap.get(Key)).get("toUser");
-                if (toUser != null && toUser.equals(userName)) {
+                long sendTime = (long) tempMap.get(Key).get("sendTimeEpochSecond");
+                String toUser = (String) Objects.requireNonNull(tempMap.get(Key)).get("toUser");
+                if (toUser != null && toUser.equals(username)) {
                     stickers.add(new Sticker(Integer.parseInt(id), fromUser, toUser, sendTime));
                 }
             }

@@ -38,16 +38,6 @@
         <activity android:name=".groupProject.GroupProjectActivity" />
         <activity android:name=".webService.SearchActivity" />
         <activity android:name=".webService.getImageActivity" />
-
-        <service
-            android:name=".firebase.FCMActivity"
-            android:permission="com.google.android.c2dm.permission.SEND"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>
