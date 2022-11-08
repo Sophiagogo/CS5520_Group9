@@ -1,5 +1,6 @@
 package edu.northeastern.cs5520_group9.firebase;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -38,8 +39,9 @@ public class StickerViewHolderRecyclerView extends RecyclerView.ViewHolder {
             receivedStickerView.setImageResource(imageResource);
         }
         fromUserView.setText(sticker.getFromUser());
-        DateFormat df = new SimpleDateFormat("dd MMM yyyy hh:mm:ss zzz");
-        sendTimeView.setText(df.format(new Date(sticker.getSendTimeEpochSecond())));
+        @SuppressLint("SimpleDateFormat")
+        DateFormat df = new SimpleDateFormat("MM-dd-yyyy hh:mm:ss");
+        sendTimeView.setText(df.format(new Date(sticker.getSendTimeEpochSecond() * 1000L)));
     }
 
     // to get sticker by id

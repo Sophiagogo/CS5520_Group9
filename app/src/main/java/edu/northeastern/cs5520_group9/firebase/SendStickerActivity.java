@@ -5,6 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.view.View;
@@ -142,6 +143,9 @@ public class SendStickerActivity extends AppCompatActivity {
         // Create the notification builder
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.ic_launcher_group)
+                .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(),
+                        sticker.getImageId() == 1 ? R.drawable.panda : R.drawable.polar_bear)).bigLargeIcon(BitmapFactory.decodeResource(getResources(),
+                        sticker.getImageId() == 1 ? R.drawable.panda : R.drawable.polar_bear)))
                 .setContentTitle("You have a new sticker from " + sticker.getFromUser() + "!")
                 .setContentText("imageId=" + sticker.getImageId())
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
