@@ -16,4 +16,5 @@
     <string name="stickers_string">Stickers</string>
     <string name="from_user_string">From User</string>
     <string name="send_time_string">Send Time</string>
+    <string name="send_to">Send to:</string>
 </resources>

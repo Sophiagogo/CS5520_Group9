@@ -13,6 +13,7 @@
         android:layout_marginStart="@dimen/list_margin"
         android:layout_marginEnd="@dimen/list_margin"
         android:text="@string/stickers_string"
+        android:textSize="20sp"
         android:minWidth="@dimen/image_size_small"
         app:layout_constraintBottom_toTopOf="@id/receivedHistoryRV"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,6 +30,7 @@
         android:layout_marginStart="@dimen/list_margin"
         android:layout_marginEnd="@dimen/list_margin"
         android:text="@string/from_user_string"
+        android:textSize="20sp"
         android:minWidth="@dimen/min_width"
         app:layout_constraintBottom_toTopOf="@id/receivedHistoryRV"
         app:layout_constraintStart_toEndOf="@id/receivedView"
@@ -43,6 +45,7 @@
         android:layout_marginStart="@dimen/list_margin"
         android:layout_marginEnd="@dimen/list_margin"
         android:text="@string/send_time_string"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@id/receivedHistoryRV"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/fromUser"/>

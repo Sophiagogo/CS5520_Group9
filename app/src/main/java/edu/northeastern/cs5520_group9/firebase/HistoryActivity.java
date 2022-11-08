@@ -32,7 +32,7 @@ public class HistoryActivity extends AppCompatActivity {
         stickers = new ArrayList<>();
         // Query from database and update history
         update();
-        queryFromDatabase();
+//        queryFromDatabase();
     }
 
     /**
@@ -41,6 +41,21 @@ public class HistoryActivity extends AppCompatActivity {
     private void update() {
         RecyclerView received = findViewById(R.id.receivedHistoryRV);
         received.setLayoutManager(new LinearLayoutManager(this));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
+        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
         received.setAdapter(new StickerAdapterRecyclerView(stickers));
     }
 
@@ -54,7 +69,7 @@ public class HistoryActivity extends AppCompatActivity {
             if (tempMap == null) return;
             for (String Key : tempMap.keySet()) {
                 String fromUser = (String) Objects.requireNonNull(tempMap.get(Key)).get("fromUser");
-                String id = String.valueOf(Objects.requireNonNull(tempMap.get(Key)).get("id"));
+                String id = String.valueOf(Objects.requireNonNull(tempMap.get(Key)).get("imageId"));
                 long sendTime = (long) tempMap.get(Key).get("sendTimeEpochSecond");
                 String toUser = (String) Objects.requireNonNull(tempMap.get(Key)).get("toUser");
                 if (toUser != null && toUser.equals(username)) {
