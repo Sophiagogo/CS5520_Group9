@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/receivedStickerView"
+        android:layout_width="@dimen/image_size_small"
+        android:layout_height="@dimen/image_size_small"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:layout_marginBottom="@dimen/image_margin"
+        android:contentDescription="@string/stickers_string"
+        android:gravity="center_vertical"
+        android:src="@android:drawable/stat_sys_warning" />
+
+    <TextView
+        android:id="@+id/fromUserView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:layout_toEndOf="@id/receivedStickerView"
+        android:gravity="center_vertical"
+        android:minWidth="@dimen/min_width"
+        android:text="@string/from_user_string"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/sendTimeView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/list_margin"
+        android:layout_marginEnd="@dimen/list_margin"
+        android:layout_toEndOf="@id/fromUserView"
+        android:gravity="center_vertical"
+        android:text="@string/send_time_string"
+        android:textColor="@color/black" />
+</RelativeLayout>

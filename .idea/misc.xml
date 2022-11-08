@@ -3,23 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_firebase_database.xml" value="0.23072916666666668" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_group_project.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_main.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_team_name.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/WO/Desktop/CS5520/A7/CS5520_Group9/app/src/main/res/layout/activity_web_service.xml" value="0.23072916666666668" />
-        <entry key="app/src/main/res/layout-land/activity_login.xml" value="0.18033509700176367" />
-        <entry key="app/src/main/res/layout-land/activity_send_sticker.xml" value="0.25" />
+        <entry key="app/src/main/res/drawable/no_image.xml" value="0.2265" />
         <entry key="app/src/main/res/layout/activity_firebase_database.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/activity_get_image.xml" value="0.19293478260869565" />
         <entry key="app/src/main/res/layout/activity_group_project.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_send_sticker.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_send_sticker.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/activity_team_name.xml" value="0.16875" />
         <entry key="app/src/main/res/layout/activity_web_service.xml" value="0.17481884057971014" />
+        <entry key="app/src/main/res/layout/layout.xml" value="0.1328125" />
       </map>
     </option>
   </component>

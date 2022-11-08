@@ -16,26 +16,27 @@ import edu.northeastern.cs5520_group9.R;
  */
 
 public class StickerViewHolderRecyclerView extends RecyclerView.ViewHolder {
-    private final ImageView receivedView;
-    private final TextView fromUser;
-    private final TextView sendTime;
+    private final ImageView receivedStickerView;
+    private final TextView fromUserView;
+    private final TextView sendTimeView;
 
     public StickerViewHolderRecyclerView(@NonNull View itemView) {
         super(itemView);
 
-        this.receivedView = itemView.findViewById(R.id.receivedView);
-        this.fromUser = itemView.findViewById(R.id.fromUser);
-        this.sendTime = itemView.findViewById(R.id.sendTime);
+        this.receivedStickerView = itemView.findViewById(R.id.receivedStickerView);
+        this.fromUserView = itemView.findViewById(R.id.fromUserView);
+        this.sendTimeView = itemView.findViewById(R.id.sendTimeView);
     }
 
 
     public void bindThisData(Sticker sticker) {
         int imageResource = getImageResourceById(sticker.getImageId());
+        System.out.println(imageResource);
         if (imageResource != -1) {
-            receivedView.setImageResource(imageResource);
+            receivedStickerView.setImageResource(imageResource);
         }
-        fromUser.setText(sticker.getFromUser());
-        sendTime.setText(new Date(sticker.getSendTimeEpochSecond()).toString());
+        fromUserView.setText(sticker.getFromUser());
+        sendTimeView.setText(new Date(sticker.getSendTimeEpochSecond()).toString());
     }
 
     // to get sticker by id
