@@ -41,17 +41,9 @@ public class StickerViewHolderRecyclerView extends RecyclerView.ViewHolder {
     // to get sticker by id
     private int getImageResourceById(int id) {
         if (id == 1) {
-            return R.drawable.apple;
+            return R.drawable.panda;
         } else if (id == 2) {
-            return R.drawable.banana;
-        } else if (id == 3) {
-            return R.drawable.bean_stew;
-        } else if (id == 4) {
-            return R.drawable.noodles;
-        } else if (id == 5) {
-            return R.drawable.sandwich;
-        } else if (id == 6) {
-            return R.drawable.sushi_roll;
+            return R.drawable.polar_bear;
         }
         return -1;
     }

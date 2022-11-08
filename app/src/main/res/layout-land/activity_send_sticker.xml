@@ -9,17 +9,17 @@
 
     <TextView
         android:id="@+id/recipientLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
+        android:layout_width="171dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="25dp"
         android:text="Send to:"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.556" />
 
     <Spinner
         android:id="@+id/usernameList"
@@ -28,10 +28,10 @@
         android:contentDescription="@string/firebase_database"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.438" />
 
     <ImageView
         android:id="@+id/image1"
@@ -68,28 +68,32 @@
         android:layout_width="127dp"
         android:layout_height="58dp"
         android:layout_marginStart="46dp"
-        android:layout_marginTop="411dp"
-        android:layout_marginEnd="255dp"
-        android:layout_marginBottom="260dp"
-        android:text="@string/sendSticker_send"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="26dp"
         android:onClick="sendSticker"
+        android:text="@string/sendSticker_send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828" />
 
     <Button
         android:id="@+id/sendStrick_checkhistory"
         android:layout_width="161dp"
         android:layout_height="61dp"
         android:layout_marginStart="38dp"
-        android:layout_marginTop="411dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="47dp"
-        android:layout_marginBottom="259dp"
-        android:text="@string/sendSticker_Check"
+        android:layout_marginBottom="16dp"
         android:onClick="showHistory"
+        android:text="@string/sendSticker_Check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.283"
         app:layout_constraintStart_toEndOf="@+id/SendSticker_send"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.855" />
 </androidx.constraintlayout.widget.ConstraintLayout>
