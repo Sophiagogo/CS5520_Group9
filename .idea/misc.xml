@@ -14,13 +14,14 @@
         <entry key="app/src/main/res/layout/activity_get_image.xml" value="0.19293478260869565" />
         <entry key="app/src/main/res/layout/activity_group_project.xml" value="0.13728470111448834" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_send_sticker.xml" value="0.1828125" />
         <entry key="app/src/main/res/layout/activity_team_name.xml" value="0.16875" />
         <entry key="app/src/main/res/layout/activity_web_service.xml" value="0.17481884057971014" />
         <entry key="app/src/main/res/layout/layout.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/sticker_history_view.xml" value="0.134375" />
       </map>
     </option>
   </component>
