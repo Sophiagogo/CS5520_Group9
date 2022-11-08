@@ -32,7 +32,7 @@ public class HistoryActivity extends AppCompatActivity {
         stickers = new ArrayList<>();
         // Query from database and update history
         update();
-//        queryFromDatabase();
+        queryFromDatabase();
     }
 
     /**
@@ -41,21 +41,6 @@ public class HistoryActivity extends AppCompatActivity {
     private void update() {
         RecyclerView received = findViewById(R.id.receivedHistoryRV);
         received.setLayoutManager(new LinearLayoutManager(this));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
-        stickers.add(new Sticker(1, "user2", "user1", 1667870293));
         received.setAdapter(new StickerAdapterRecyclerView(stickers));
     }
 

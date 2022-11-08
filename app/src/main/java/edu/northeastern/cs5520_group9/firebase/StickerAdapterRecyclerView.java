@@ -26,7 +26,7 @@ public class StickerAdapterRecyclerView extends RecyclerView.Adapter<StickerView
     @Override
     public StickerViewHolderRecyclerView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new StickerViewHolderRecyclerView(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.activity_history, parent, false));
+                .inflate(R.layout.sticker_history_view, parent, false));
     }
 
     @Override
