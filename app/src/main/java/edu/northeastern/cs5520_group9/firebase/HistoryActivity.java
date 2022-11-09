@@ -1,6 +1,7 @@
 package edu.northeastern.cs5520_group9.firebase;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +22,7 @@ public class HistoryActivity extends AppCompatActivity {
     private List<Sticker> stickers;
     private String username;
     private DatabaseReference databaseReference;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,9 @@ public class HistoryActivity extends AppCompatActivity {
         RecyclerView received = findViewById(R.id.receivedHistoryRV);
         received.setLayoutManager(new LinearLayoutManager(this));
         received.setAdapter(new StickerAdapterRecyclerView(stickers));
+
+        TextView countView = (TextView) findViewById(R.id.count);
+        countView.setText("# stickers sent: " + count);
     }
 
     /**
@@ -49,6 +54,7 @@ public class HistoryActivity extends AppCompatActivity {
      */
     private void queryFromDatabase() {
         stickers = new ArrayList<>();
+        count = 0;
         databaseReference.child("stickers").get().addOnCompleteListener((t) -> {
             HashMap<String, HashMap<String, Object>> tempMap = (HashMap) t.getResult().getValue();
             if (tempMap == null) return;
@@ -59,6 +65,9 @@ public class HistoryActivity extends AppCompatActivity {
                 String toUser = (String) Objects.requireNonNull(tempMap.get(Key)).get("toUser");
                 if (toUser != null && toUser.equals(username)) {
                     stickers.add(new Sticker(Integer.parseInt(id), fromUser, toUser, sendTime));
+                }
+                if (fromUser.equals(username)) {
+                    count += 1;
                 }
             }
             stickers.sort(Collections.reverseOrder());
