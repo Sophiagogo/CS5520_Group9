@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    app:contentPadding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tvScoreRank"
+            android:fontFamily="casual"
+            android:text="rank"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:id="@+id/tvScoreMark"
+            android:fontFamily="casual"
+            android:text="score"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tvScoreUsername"
+            android:fontFamily="casual"
+            android:text="username"
+            android:gravity="center"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
