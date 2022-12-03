@@ -69,7 +69,7 @@ public class Register_for_game extends AppCompatActivity {
                     Toast.makeText(Register_for_game.this, "You enter something wrong", Toast.LENGTH_SHORT).show();
                 } else {
                     register(text_username, text_email, text_password);
-                    Intent intent = new Intent(Register_for_game.this, game_setting.class);
+                    Intent intent = new Intent(Register_for_game.this, GameSetting.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }

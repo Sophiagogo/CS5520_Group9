@@ -19,7 +19,7 @@
             android:name=".groupProject.Login_for_game"
             android:exported="false" />
         <activity
-            android:name=".groupProject.game_setting"
+            android:name=".groupProject.GameSetting"
             android:exported="false" />
         <activity
             android:name=".groupProject.Register_for_game"

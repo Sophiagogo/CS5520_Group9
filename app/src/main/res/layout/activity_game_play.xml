@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".groupProject.Register_for_game">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:contentDescription="background_image"
+        android:scaleType="fitXY"
+        android:src="@drawable/game_background1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context=".GameActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontal1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glHorizontal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertical1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertical2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="484dp" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alignmentMode="alignMargins"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/glHorizontal1"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontal2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:columnCount="6"
+            android:rowCount="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="3"
+                android:layout_columnSpan="3"
+                android:layout_rowWeight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/ivMonster1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pic1" />
+
+                <Button
+                    android:id="@+id/btnAnswer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:textSize="20sp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_columnWeight="3"
+                android:layout_columnSpan="3"
+                android:layout_rowWeight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/ivMonster2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pic2"/>
+
+                <Button
+                    android:id="@+id/btnAnswer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnWeight="2"
+                android:layout_columnSpan="2"
+                android:layout_rowWeight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/ivMonster3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/pic3" />
+
+                <Button
+                    android:id="@+id/btnAnswer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_columnWeight="2"
+                android:layout_columnSpan="2"
+                android:layout_rowWeight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/ivMonster4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pic4" />
+
+                <Button
+                    android:id="@+id/btnAnswer4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_row="1"
+                android:layout_column="4"
+                android:layout_columnWeight="2"
+                android:layout_columnSpan="2"
+                android:layout_rowWeight="1"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:id="@+id/ivMonster5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/pic5" />
+
+                <Button
+                    android:id="@+id/btnAnswer5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:fontFamily="casual"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvTimeCount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="casual"
+            android:text="TIME:"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvScoreCount"
+            app:layout_constraintStart_toStartOf="@id/glVertical2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeStepGranularity="2sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvScoreCount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="casual"
+            android:text="SCORE:"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeCount"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontal1"
+            app:layout_constraintStart_toStartOf="@id/glVertical2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeStepGranularity="2sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCompetitorTitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="casual"
+            android:layout_marginStart="30dp"
+            android:text="You are playing against: "
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontal1"
+            app:layout_constraintStart_toStartOf="@id/glVertical1"
+            app:layout_constraintEnd_toStartOf="@id/tvCompetitorName"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeStepGranularity="2sp"
+            android:textColor="@color/colorPrimary"
+            android:visibility="invisible"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCompetitorName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="casual"
+            android:text="Name"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontal1"
+            app:layout_constraintStart_toEndOf="@id/tvCompetitorTitle"
+            app:layout_constraintEnd_toStartOf="@id/glVertical2"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="24sp"
+            android:autoSizeStepGranularity="2sp"
+            android:textColor="@color/colorPrimary"
+            android:visibility="invisible"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCompeteHome"
+            android:layout_width="134dp"
+            android:layout_height="66dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:backgroundTint="@color/white"
+            android:fontFamily="casual"
+            android:text="BACK"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/glHorizontal1"
+            app:layout_constraintEnd_toEndOf="@id/glVertical1"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="Question here"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/glHorizontal2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="casual"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="24sp"
+            android:autoSizeMaxTextSize="48sp"
+            android:autoSizeStepGranularity="2sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/party_popper"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/party_popper" />
+</RelativeLayout>

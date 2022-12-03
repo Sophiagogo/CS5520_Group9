@@ -3,7 +3,6 @@ package edu.northeastern.cs5520_group9.groupProject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,7 +50,7 @@ public class Login_for_game extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 Toast.makeText(Login_for_game.this, "Login successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Login_for_game.this, game_setting.class);
+                                Intent intent = new Intent(Login_for_game.this, GameSetting.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 startActivity(intent);
                                 finish();
