@@ -37,4 +37,11 @@
     <string name="setting_button_logout">Logout</string>
     <string name="matching_shake_phone_line">Shake to join an existing game</string>
     <string name="matching_create_game_line">Create a new online game</string>
+    <string name="back">BACK</string>
+    <string name="hard">Hard</string>
+    <string name="medium">Medium</string>
+    <string name="your_best_score">Your best score:</string>
+    <string name="you_have_played">You have played</string>
+    <string name="easy">Easy</string>
+    <string name="background_image">background_image</string>
 </resources>

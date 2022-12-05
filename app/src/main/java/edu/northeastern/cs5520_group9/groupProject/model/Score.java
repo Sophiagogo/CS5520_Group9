@@ -9,10 +9,6 @@ public class Score {
         this.username = username;
     }
 
-    public Score() {
-
-    }
-
     public int getScore() {
         return score;
     }

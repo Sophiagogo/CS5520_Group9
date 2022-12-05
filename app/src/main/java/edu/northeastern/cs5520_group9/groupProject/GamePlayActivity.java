@@ -280,7 +280,7 @@ public class GamePlayActivity extends AppCompatActivity {
         if (Integer.parseInt(answer.getText().toString()) == game.curAnswer) {
 
             //sound effect and shows a party popper
-            sound.playHappySound();
+            sound.playRightSound();
             fadeOutAndHideImage((ImageView) findViewById(R.id.party_popper));
 
 
@@ -312,7 +312,7 @@ public class GamePlayActivity extends AppCompatActivity {
             answer.setVisibility(View.INVISIBLE);
             monster.setVisibility(View.INVISIBLE);
             //sound effect
-            sound.playSadSound();
+            sound.playWrongSound();
 //            Toast toast = Toast.makeText(GameActivity.this, "Oops! Try again", Toast.LENGTH_SHORT);
 //            toast.setGravity(Gravity.CENTER, 0, 0);
 //            toast.show();
