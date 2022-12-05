@@ -14,7 +14,6 @@ public class Sound {
     private static int rightSound;
     private static int endSound;
 
-
     public Sound(Context context) {
 
         // Create the soundPool
