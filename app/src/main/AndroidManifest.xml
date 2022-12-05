@@ -30,7 +30,6 @@
             android:name=".groupProject.GameSetting"
             android:configChanges="screenSize"
             android:screenOrientation="landscape" />
-        android:exported="false" />
         <activity
             android:name=".groupProject.LocationActivity"
             android:exported="false" />
