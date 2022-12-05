@@ -17,6 +17,9 @@
         android:theme="@style/Theme.CS5520_Group9"
         tools:targetApi="31">
         <activity
+            android:name=".groupProject.MatchingActivity"
+            android:exported="false" />
+        <activity
             android:name=".groupProject.Login_for_game"
             android:exported="false" />
         <activity
