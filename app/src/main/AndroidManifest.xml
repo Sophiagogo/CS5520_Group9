@@ -67,6 +67,7 @@
         <activity android:name=".groupProject.GroupProjectActivity" />
         <activity android:name=".webService.SearchActivity" />
         <activity android:name=".webService.getImageActivity" />
+        <activity android:name=".groupProject.ScoreboardActivity" />
     </application>
 
 </manifest>
