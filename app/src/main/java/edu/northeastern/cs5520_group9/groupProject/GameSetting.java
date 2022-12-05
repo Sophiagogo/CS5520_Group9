@@ -48,7 +48,7 @@ public class GameSetting extends AppCompatActivity {
 
         currUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
-        readUsername(dbRef, new OnGetDataListener() {
+        readUsername(dbRef, new DataListener() {
             @Override
             public void onSuccess(String dataSnapShotValue) {
                 usernameString = dataSnapShotValue;
@@ -91,7 +91,7 @@ public class GameSetting extends AppCompatActivity {
         });
     }
 
-    private void readUsername(DatabaseReference ref, final OnGetDataListener listener) {
+    private void readUsername(DatabaseReference ref, final DataListener listener) {
         ref.child("Users").orderByChild("id").equalTo(currUser.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
@@ -118,12 +118,6 @@ public class GameSetting extends AppCompatActivity {
                     switch (checkedId) {
                         case R.id.btnSettingGameAdd:
                             gameOperation = "+";
-                            break;
-                        case R.id.btnSettingGameDivide:
-                            gameOperation = "÷";
-                            break;
-                        case R.id.btnSettingGameMultiply:
-                            gameOperation = "×";
                             break;
                         case R.id.btnSettingGameSubtract:
                             gameOperation = "-";
@@ -182,7 +176,7 @@ public class GameSetting extends AppCompatActivity {
     }
 
     private void openStartActivity() {
-        Intent intent = new Intent(this, StartActivity.class);
+        Intent intent = new Intent(this, GroupProjectActivity.class);
         startActivity(intent);
     }
 
@@ -205,7 +199,7 @@ public class GameSetting extends AppCompatActivity {
     }
 
     private void openScoreBoard() {
-        Intent intent = new Intent(this, ScoreBoardActivity.class);
+        Intent intent = new Intent(this, ScoreboardActivity.class);
         intent.putExtra("USERNAME", usernameString);
         startActivity(intent);
     }
