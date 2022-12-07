@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import edu.northeastern.cs5520_group9.R;
+import edu.northeastern.cs5520_group9.menu.MainActivity;
 import edu.northeastern.cs5520_group9.team.TeamNameActivity;
 
 public class MatchingActivity extends AppCompatActivity {
@@ -27,6 +28,9 @@ public class MatchingActivity extends AppCompatActivity {
     TextView title;
     TextView availableRooms;
     FirebaseDatabase database;
+
+    String GAME_LEVEL, GAME_OPERATION, USERNAME;
+    boolean GAME_MODE;
 
 
     @Override
@@ -41,6 +45,8 @@ public class MatchingActivity extends AppCompatActivity {
 
         database = FirebaseDatabase.getInstance();
 
+        getGameSettings();
+
         roomsRef = database.getReference("room");
         roomsRef.setValue("");
 
@@ -52,8 +58,12 @@ public class MatchingActivity extends AppCompatActivity {
                 roomsRef = database.getReference("room");
                 roomsRef.setValue("created");
 
-                addRoomEventListener();
+
+
+//                addRoomEventListener();
+
                 roomRef.setValue("player1");
+                openGameActivity();
             }
         });
 
@@ -61,31 +71,34 @@ public class MatchingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatabaseReference roomRef = database.getReference("rooms player2");
-                addRoomEventListener();
+
+//                addRoomEventListener();
                 roomRef.setValue("player2");
+                openGameActivity();
             }
         });
 
         addRoomsEventListener();
 
+
     }
 
-    private void addRoomEventListener(){
-        roomRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                createButton.setEnabled(true);
-                Intent intent = new Intent(getApplicationContext(), GamePlayActivity.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                createButton.setEnabled(true);
-                Toast.makeText(MatchingActivity.this, "Error!",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+//    private void addRoomEventListener(){
+//        roomRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                createButton.setEnabled(true);
+//                openGameActivity();
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                createButton.setEnabled(true);
+//                Toast.makeText(MatchingActivity.this, "Error!",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 
     private void addRoomsEventListener(){
         roomsRef = database.getReference("room");
@@ -106,6 +119,22 @@ public class MatchingActivity extends AppCompatActivity {
                 //nothing
             }
         });
+    }
+
+    private void openGameActivity() {
+        Intent intent = new Intent(this, GamePlayActivity.class);
+        intent.putExtra("GAME_OPERATION", GAME_OPERATION);
+        intent.putExtra("GAME_LEVEL", GAME_LEVEL);
+        intent.putExtra("GAME_MODE", true);
+        intent.putExtra("USERNAME", USERNAME);
+        startActivity(intent);
+    }
+
+    private void getGameSettings() {
+        GAME_OPERATION = getIntent().getExtras().getString("GAME_OPERATION");
+        GAME_LEVEL = getIntent().getExtras().getString("GAME_LEVEL");
+        GAME_MODE = getIntent().getExtras().getBoolean("GAME_MODE");
+        USERNAME = getIntent().getExtras().getString("USERNAME");
     }
 
 
