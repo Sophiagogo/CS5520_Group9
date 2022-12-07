@@ -61,7 +61,7 @@ public class Register_for_game extends AppCompatActivity {
             public void onClick(View view) {
                 String text_username = username_txt.getText().toString().trim();
                 String text_email = email_txt.getText().toString().trim();
-                String text_password = email_txt.getText().toString().trim();
+                String text_password = password_txt.getText().toString().trim();
 
                 if (TextUtils.isEmpty(text_username) || TextUtils.isEmpty(text_email) || TextUtils.isEmpty(text_password)) {
                     Toast.makeText(Register_for_game.this, "You missed something", Toast.LENGTH_SHORT).show();
