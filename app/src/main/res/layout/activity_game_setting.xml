@@ -77,7 +77,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_add"
                         android:textStyle="bold" />
@@ -90,7 +90,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_subtract"
                         android:textStyle="bold" />
@@ -133,7 +133,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_easy"
                         android:textStyle="bold" />
@@ -146,7 +146,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_medium"
                         android:textStyle="bold" />
@@ -159,7 +159,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_hard"
                         android:textStyle="bold" />
@@ -200,7 +200,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_single_player"
                         android:textStyle="bold" />
@@ -213,7 +213,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="@color/teal_200"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/black"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="@string/setting_button_play_with_friend"
                         android:textStyle="bold" />

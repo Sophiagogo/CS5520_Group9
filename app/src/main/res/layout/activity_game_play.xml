@@ -82,14 +82,14 @@
                     android:id="@+id/btnAnswer1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:fontFamily="casual"
-                    android:textSize="20sp"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="casual"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -113,14 +113,14 @@
                     android:id="@+id/btnAnswer2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:fontFamily="casual"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="casual"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -144,14 +144,14 @@
                     android:id="@+id/btnAnswer3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:fontFamily="casual"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="casual"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -175,14 +175,14 @@
                     android:id="@+id/btnAnswer4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:fontFamily="casual"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="casual"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -206,14 +206,14 @@
                     android:id="@+id/btnAnswer5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentBottom="true"
-                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
-                    android:fontFamily="casual"
                     android:backgroundTint="@color/white"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"/>
+                    android:fontFamily="casual"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -325,7 +325,7 @@
             android:autoSizeMinTextSize="24sp"
             android:autoSizeMaxTextSize="48sp"
             android:autoSizeStepGranularity="2sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/black"
             android:textStyle="bold" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
