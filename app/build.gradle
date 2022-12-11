@@ -25,6 +25,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    aaptOptions {
+        cruncherEnabled = false
+    }
 }
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.5.1'
