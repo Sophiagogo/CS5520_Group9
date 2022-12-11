@@ -108,11 +108,11 @@ public class ScoreboardActivity extends AppCompatActivity {
                         if (!snapshot.exists()) {
                             Toast.makeText(ScoreboardActivity.this,
                                     "You didn't played a game.", Toast.LENGTH_LONG).show();
-                        } else {
-                            Integer bestScore = snapshot.getValue(Integer.class);
-                            bestScoreView.setText(MessageFormat.format(
-                                    "Your personal best score: {0}", bestScore));
                         }
+                        Integer bestScore = snapshot.getValue(Integer.class);
+                        if (bestScore == null) bestScore = 0;
+                        bestScoreView.setText(MessageFormat.format(
+                                "Your personal best score: {0}", bestScore));
                     }
 
                     @Override
@@ -166,6 +166,7 @@ public class ScoreboardActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         numbers = snapshot.getValue(Integer.class);
+                        if (numbers == null) numbers = 0;
                         playedNumbersView.setText(MessageFormat.format(
                                 "{0}, you have played {1} rounds", USERNAME, numbers));
                     }
