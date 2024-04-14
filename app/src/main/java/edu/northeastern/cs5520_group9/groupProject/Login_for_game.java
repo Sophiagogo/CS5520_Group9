@@ -20,49 +20,53 @@ import com.google.firebase.auth.FirebaseAuth;
 import edu.northeastern.cs5520_group9.R;
 
 
-public class Login_for_game extends AppCompatActivity {
+public class Login_for_game extends AppCompatActivity implements LoginView {
     TextInputEditText email, password;
     Button login_btn;
-    FirebaseAuth auth;
+    ProgressBar progressBar;
+    LoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_for_game);
 
-        ProgressBar progressBar = findViewById(R.id.login_progressBar);
+        progressBar = findViewById(R.id.login_progressBar);
         email = findViewById(R.id.login_email);
         password = findViewById(R.id.login_password);
         login_btn = findViewById(R.id.login_btn);
-        auth = FirebaseAuth.getInstance();
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email_text = email.getText().toString();
-                String password_text = password.getText().toString();
-                if (TextUtils.isEmpty(email_text) || TextUtils.isEmpty(password_text)){
-                    Toast.makeText(Login_for_game.this, "You missed something", Toast.LENGTH_SHORT).show();
-                } else {
-                    progressBar.setVisibility(View.VISIBLE);
-                    auth.signInWithEmailAndPassword(email_text, password_text).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(Login_for_game.this, "Login successful", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(Login_for_game.this, GameSetting.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                startActivity(intent);
-                                finish();
-                            } else {
-                                Toast.makeText(Login_for_game.this, "Login failed", Toast.LENGTH_SHORT).show();
-                            }
-//                            progressBar.setVisibility(View.VISIBLE);
-                        }
-                    });
-                }
-            }
+        presenter = new LoginPresenter(this);
+
+        login_btn.setOnClickListener(view -> {
+            String email_text = email.getText().toString().trim();
+            String password_text = password.getText().toString().trim();
+            presenter.login(email_text, password_text);
         });
-
     }
+
+    @Override
+    public void showProgress(boolean show) {
+        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
+    }
+
+    @Override
+    public void showError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void navigateToGameSettings() {
+        Intent intent = new Intent(this, GameSetting.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy();
+    }
+
 }
